@@ -7,24 +7,22 @@
   <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
   <script src="bootstrap/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="jquery-ui-bootstrap/js/jquery-1.8.3.min.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/flatpickr/dist/flatpickr.min.css">
+  <script src="https://unpkg.com/flatpickr"></script>
   <title>Behavior Tracking</title>
 </head>
 <body>
-  <div class="container">
-      <div id="top">
-        <div>
-          <img alt="L I logo" src ="logo.jpg"/>
-        </div>
-          <ul class="nav nav-pills">
-            <li><a href="behavior.htm">Behavior</a></li>
-            <li><a href="incident.php" class="hidden">Incident</a></li>
-            <li><a href="award.php" class="hidden">Commend</a></li>
-            <li><a href="login.htm">Log Out</a></li>
-          </ul>
-      </div>
-      <div id="middle">
+  <div class="container text-center">
+  <div class="span4"><img class="center-block" src="logo.jpg" /></div>
+    <ul class="nav nav-pills">
+      <li><a href="behavior.htm">Behavior</a></li>
+      <li><a href="incident.php" class="hidden">Incident</a></li>
+      <li><a href="award.php" class="hidden">Commend</a></li>
+      <li><a href="login.htm">Log Out</a></li>
+    </ul>
+  <div id="middle">
 <form method="post">
-  <div id="topRow">
+  <div id="topRow col-sm-12">
 Employee:
 <select>
   <option value="jane">Jane Doe</option>
@@ -38,81 +36,93 @@ Employee:
    <option value="west">West</option>
  </select>
  Date:
+  <input class="flatpickr" id="calendar" type="text" placeholder="Select Date..">
+  <script>
+    flatpickr(".flatpickr", {});
+  </script>
+  <br />
  </div>
- Behaviors:<br />
- <div class="span6">
-<input type="checkbox" name="fighting">Hands on Others/Fighting/Biting
-<input type="checkbox" name="defiant">Disrespect/Failure to Comply/Defiant
-<input type="checkbox" name="missing">Out of Area
+ <p class="col-sm-12">Location:</p>
+ <div class="col-sm-12">
+ <input type="radio" name="location">Area 1
+ <input type="radio" name="location">Area 2
+ <input type="radio" name="location">Area 3
+ <input type="radio" name="location">Area 4
+ <input type="radio" name="location">Bathroom
+ </div>
+ <div class="col-sm-12">
+ <input type="radio" name="location">Area 5
+ <input type="radio" name="location">Area 6
+ <input type="radio" name="location">Area 7
+ <input type="radio" name="location">Area 8
+ <input type="radio" name="location">Lunch Room
+ </div>
+ <p class="col-sm-12">Behaviors:</p>
+ <div class="col-sm-6 checkbox">
+<input type="checkbox" name="fighting">Hands on Others/Fighting/Biting</br>
+<input type="checkbox" name="defiant">Disrespect/Failure to Comply/Defiant</br>
+<input type="checkbox" name="missing">Out of Area</br>
 </div>
-<div class="span6">
-<input type="checkbox" name="teasing">Teasing/Taunting/Harrassment
-<input type="checkbox" name="threats">Threats/Intimidation
-<input type="checkbox" name="verbal">Abusive Language
+<div class="col-sm-6 checkbox">
+<input type="checkbox" name="teasing">Teasing/Taunting/Harrassment</br>
+<input type="checkbox" name="threats">Threats/Intimidation</br>
+<input type="checkbox" name="verbal">Abusive Language</br>
 </div>
-Location:<br />
-<div class="span6">
-<input type="radio" name="location">Area 1
-<input type="radio" name="location">Area 2
-<input type="radio" name="location">Area 3
-<input type="radio" name="location">Area 4
-</div>
-<div class="span6">
-<input type="radio" name="location">Area 5
-<input type="radio" name="location">Area 6
-<input type="radio" name="location">Area 7
-<input type="radio" name="location">Area 8
-</div>
-Possible Function:<br />
-<div class="span3">
+<p class="col-sm-12">Possible Function:</p>
+<div class="col-sm-12">
 <input type="checkbox" name="peer" />Get peer attention
 <input type="checkbox" name="supervisor" />Get supervisor attention
 </div>
-<div class="span3">
+<div class="col-sm-12">
 <input type="checkbox" name="avoidTask" />Avoid task(s)
 <input type="checkbox" name="avoidPeer" />Avoid peer(s)
 </div>
-<div class="span3">
+<div class="col-sm-12">
 <input type="checkbox" name="avoidSupervisor" />Avoid supervisor(s)
 <input type="checkbox" name="item" />Get item/activity
 </div>
-<div class="span3">
+<div class="col-sm-12">
 <input type="checkbox" name="unknown" />Unknown
 </div>
-Prior Action Taken: <br />
-<div class="span3">
-<input type="checkbox" name="edp" />Referral to EDP
-<input type="checkbox" name="informal" />Informal talk and/or warning
+<p class="col-sm-12">Prior Action Taken:</p>
+<div class="col-sm-3">
+<input type="checkbox" name="edp" />Referral to EDP<br />
+<input type="checkbox" name="informal" />Informal talk and/or warning<br />
 </div>
-<div class="span3">
-<input type="checkbox" name="change" />Change in student's work setting
-<input type="checkbox" name="teaching" />Re-teaching expectations
+<div class="col-sm-3">
+<input type="checkbox" name="change" />Change in student's work setting<br />
+<input type="checkbox" name="teaching" />Re-teaching expectations<br />
 </div>
-<div class="span3">
-<input type="checkbox" name="behavior" />Behavior Suspension
-<input type="checkbox" name="notify" />Parent or Guardian Notification
+<div class="col-sm-3">
+<input type="checkbox" name="behavior" />Behavior Suspension<br />
+<input type="checkbox" name="notify" />Parent or Guardian Notification<br />
 </div>
-<div class="span3">
-<input type="checkbox" name="suspension" />Suspension from work
+<div class="col-sm-3">
+<input type="checkbox" name="suspension" />Suspension from work<br />
 </div>
-Trigger for behavior:<br />
-<div class="span3">
-<input type="checkbox" name="request" />Supervisor request of worker
-<input type="checkbox" name="redirect" />Redirection
-<input type="checkbox" name="setting" />Unstructured Setting
+<p class="col-sm-12">Trigger for behavior:</p>
+<div class="col-sm-3">
+<input type="checkbox" name="request" />Supervisor request of worker<br />
+<input type="checkbox" name="redirect" />Redirection<br />
+<input type="checkbox" name="setting" />Unstructured Setting<br />
 </div>
-<div class="span3">
-<input type="checkbox" name="transition" />Transition
-<input type="checkbox" name="peer" />Peer provoked
-<input type="checkbox" name="frustration" />Frustration with task difficulty
+<div class="col-sm-3">
+<input type="checkbox" name="transition" />Transition<br />
+<input type="checkbox" name="peer" />Peer provoked<br />
+<input type="checkbox" name="frustration" />Frustration with task difficulty<br />
 </div>
-<div class="span3">
-<input type="checkbox" name="suprvisor" />No direct supervisor attention
-<input type="checkbox" name="peer" />No direct peer attention
-<input type="checkbox" name="communication" />Communication difficulty
+<div class="col-sm-3">
+<input type="checkbox" name="suprvisor" />No direct supervisor attention<br />
+<input type="checkbox" name="peer" />No direct peer attention<br />
+<input type="checkbox" name="communication" />Communication difficulty<br />
 </div>
-<div class="span3">
-<input type="checkbox" name="agitation" />Prior agitation
-<input type="checkbox" name="other" />Other
+<div class="col-sm-3">
+<input type="checkbox" name="agitation" />Prior agitation<br />
+<input type="checkbox" name="other" />Other<br />
+</div>
+<div class="col-sm-12">
+Notes:
+<input type="text" name="notes" class="" />
+</div>
 </div>
 </div>
