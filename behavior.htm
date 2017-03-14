@@ -13,16 +13,17 @@
 </head>
 <body>
   <div class="container text-center">
-  <div class="span4"><img class="center-block" src="logo.jpg" /></div>
+  <div class="span4 center-block"><img class="center-block" src="logo.jpg" /></div>
     <ul class="nav nav-pills">
       <li><a href="behavior.htm">Behavior</a></li>
       <li><a href="incident.php" class="hidden">Incident</a></li>
       <li><a href="award.php" class="hidden">Commend</a></li>
-      <li><a href="login.htm">Log Out</a></li>
+      <li><a href="index.php">Log Out</a></li>
     </ul>
-  <div id="middle">
-<form method="post">
-  <div id="topRow col-sm-12">
+  <div id="middle" class="heavyfont">
+<form method="post" class="form-vertical">
+  <div class="form-group" id="topRow">
+    <div class="col-sm-3">
 Employee:
 <select>
   <option value="jane">Jane Doe</option>
@@ -30,99 +31,97 @@ Employee:
   <option value="mike">Mike Miller</option>
   <option value="martha">Martha Washington</option>
 </select>
- Workshop:
+</div>
+<div class="col-sm-3">
+  Workshop:
  <select>
    <option value="north">North</option>
    <option value="west">West</option>
  </select>
- Date:
+ </div>
+ <div class="col-sm-3">
+  Date:
   <input class="flatpickr" id="calendar" type="text" placeholder="Select Date..">
   <script>
     flatpickr(".flatpickr", {});
   </script>
-  <br />
+</div>
+<div class="col-sm-3">
+  Location of Incident:
+   <select>
+     <option value="area1">Area 1</option>
+     <option value="area2">Area 2</option>
+     <option value="area3">Area 3</option>
+     <option value="area4">Area 4</option>
+     <option value="area5">Area 5</option>
+     <option value="area6">Area 6</option>
+     <option value="area7">Area 7</option>
+     <option value="area8">Area 8</option>
+     <option value="bathroom">Bathroom</option>
+     <option value="locker">Locker Area</option>
+     <option value="lunch">Lunch Room</option>
+     <option value="outside">Outside</option>
+   </select>
  </div>
- <p class="col-sm-12">Location:</p>
- <div class="col-sm-12">
- <input type="radio" name="location">Area 1
- <input type="radio" name="location">Area 2
- <input type="radio" name="location">Area 3
- <input type="radio" name="location">Area 4
- <input type="radio" name="location">Bathroom
  </div>
- <div class="col-sm-12">
- <input type="radio" name="location">Area 5
- <input type="radio" name="location">Area 6
- <input type="radio" name="location">Area 7
- <input type="radio" name="location">Area 8
- <input type="radio" name="location">Lunch Room
- </div>
- <p class="col-sm-12">Behaviors:</p>
- <div class="col-sm-6 checkbox">
+ <p class="col-sm-12">Behaviors exhibited:</p>
+ <div class="col-sm-6 checkbox form-group leftcheck">
 <input type="checkbox" name="fighting">Hands on Others/Fighting/Biting</br>
 <input type="checkbox" name="defiant">Disrespect/Failure to Comply/Defiant</br>
 <input type="checkbox" name="missing">Out of Area</br>
 </div>
-<div class="col-sm-6 checkbox">
+<div class="col-sm-6 checkbox form-group rightcheck">
 <input type="checkbox" name="teasing">Teasing/Taunting/Harrassment</br>
 <input type="checkbox" name="threats">Threats/Intimidation</br>
 <input type="checkbox" name="verbal">Abusive Language</br>
 </div>
 <p class="col-sm-12">Possible Function:</p>
-<div class="col-sm-12">
-<input type="checkbox" name="peer" />Get peer attention
-<input type="checkbox" name="supervisor" />Get supervisor attention
+<div class="col-sm-6">
+<input type="checkbox" name="peer" />Get peer attention<br />
+<input type="checkbox" name="supervisor" />Get supervisor attention<br />
 </div>
-<div class="col-sm-12">
-<input type="checkbox" name="avoidTask" />Avoid task(s)
-<input type="checkbox" name="avoidPeer" />Avoid peer(s)
+<div class="col-sm-6">
+<input type="checkbox" name="avoidTask" />Avoid task(s)<br />
+<input type="checkbox" name="avoidPeer" />Avoid peer(s)<br />
 </div>
-<div class="col-sm-12">
-<input type="checkbox" name="avoidSupervisor" />Avoid supervisor(s)
-<input type="checkbox" name="item" />Get item/activity
+<div class="col-sm-6">
+<input type="checkbox" name="avoidSupervisor" />Avoid supervisor(s)<br />
+<input type="checkbox" name="item" />Get item/activity<br />
 </div>
-<div class="col-sm-12">
-<input type="checkbox" name="unknown" />Unknown
+<div class="col-sm-6">
+<input type="checkbox" name="unknown" />Unknown<br />
 </div>
 <p class="col-sm-12">Prior Action Taken:</p>
-<div class="col-sm-3">
+<div class="col-sm-6 leftcheck">
 <input type="checkbox" name="edp" />Referral to EDP<br />
 <input type="checkbox" name="informal" />Informal talk and/or warning<br />
-</div>
-<div class="col-sm-3">
 <input type="checkbox" name="change" />Change in student's work setting<br />
 <input type="checkbox" name="teaching" />Re-teaching expectations<br />
 </div>
-<div class="col-sm-3">
+<div class="col-sm-6 rightcheck">
 <input type="checkbox" name="behavior" />Behavior Suspension<br />
 <input type="checkbox" name="notify" />Parent or Guardian Notification<br />
-</div>
-<div class="col-sm-3">
 <input type="checkbox" name="suspension" />Suspension from work<br />
 </div>
-<p class="col-sm-12">Trigger for behavior:</p>
-<div class="col-sm-3">
+<p class="col-sm-12">Trigger for Behavior:</p>
+<div class="col-sm-6 form-group">
 <input type="checkbox" name="request" />Supervisor request of worker<br />
 <input type="checkbox" name="redirect" />Redirection<br />
 <input type="checkbox" name="setting" />Unstructured Setting<br />
-</div>
-<div class="col-sm-3">
 <input type="checkbox" name="transition" />Transition<br />
 <input type="checkbox" name="peer" />Peer provoked<br />
 <input type="checkbox" name="frustration" />Frustration with task difficulty<br />
 </div>
-<div class="col-sm-3">
+<div class="col-sm-6 form-group">
 <input type="checkbox" name="suprvisor" />No direct supervisor attention<br />
 <input type="checkbox" name="peer" />No direct peer attention<br />
 <input type="checkbox" name="communication" />Communication difficulty<br />
-</div>
-<div class="col-sm-3">
 <input type="checkbox" name="agitation" />Prior agitation<br />
 <input type="checkbox" name="other" />Other<br />
 </div>
 <div class="col-sm-12">
 Notes:
-<input type="text" name="notes" class="" />
+<input type="text" name="notes" class="" maxlength="500" size="100"/><br /><br />
 </div>
 </div>
 </div>
